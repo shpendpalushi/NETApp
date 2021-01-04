@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Documents\\Udemy\\NETApp\\API\\API.csproj": {}
+    "C:\\Users\\User\\Documents\\Udemy\\NETApp\\api\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Documents\\Udemy\\NETApp\\API\\API.csproj": {
+    "C:\\Users\\User\\Documents\\Udemy\\NETApp\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Documents\\Udemy\\NETApp\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\Udemy\\NETApp\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\User\\Documents\\Udemy\\NETApp\\API\\API.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\Udemy\\NETApp\\api\\API.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Documents\\Udemy\\NETApp\\API\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\Udemy\\NETApp\\api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
