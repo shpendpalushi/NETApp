@@ -3,8 +3,6 @@
  * Black Dashboard - v1.0.0
  =========================================================
 
- * Product Page: https://www.creative-tim.com/product/black-dashboard
- * Copyright 2018 Creative Tim (http://www.creative-tim.com)
 
 
  =========================================================
@@ -12195,7 +12193,7 @@ fieldset[disabled] .btn-link.active {
 }
 
 .footer .nav {
-  display: inline-block;
+  /* display: inline-block; */
   float: left;
   margin-bottom: 0;
   padding-left: 30px;
@@ -13395,8 +13393,20 @@ img {
   vertical-align: middle;
   overflow: hidden;
 }
+.navbar .photo-flag {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  border-radius: 5%;
+  vertical-align: middle;
+  overflow: hidden;
+}
 
 .navbar .photo img {
+  width: 100%;
+}
+
+.navbar .photo-flag img {
   width: 100%;
 }
 
@@ -14183,7 +14193,16 @@ hr {
   margin: 0 auto;
 }
 
-.table>tbody>tr>td .photo img {
+.table>tbody>tr>td .photo-flag {
+  height: 30px;
+  width: 30px;
+  border-radius: 5%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+
+.table>tbody>tr>td .photo-flag img {
   width: 100%;
 }
 
@@ -15264,8 +15283,26 @@ table.tablesorter thead tr .headerSortDown {
   box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
 }
 
+.sidebar .user .photo-flag,
+.off-canvas-sidebar .user .photo-flag {
+  width: 34px;
+  height: 34px;
+  overflow: hidden;
+  float: left;
+  z-index: 5;
+  margin-right: 10px;
+  border-radius: 50%;
+  margin-left: 23px;
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+}
+
 .sidebar .user .photo img,
 .off-canvas-sidebar .user .photo img {
+  width: 100%;
+}
+
+.sidebar .user .photo-flag img,
+.off-canvas-sidebar .user .photo-flag img {
   width: 100%;
 }
 
@@ -15646,7 +15683,9 @@ table.tablesorter thead tr .headerSortDown {
 .off-canvas-sidebar .logo a.logo-mini,
 .off-canvas-sidebar .logo a.logo-normal,
 .sidebar .user .photo,
+.sidebar .user .photo-flag,
 .off-canvas-sidebar .user .photo,
+.off-canvas-sidebar .user .photo-flag,
 .sidebar .user a,
 .off-canvas-sidebar .user a,
 .sidebar .user .info>a>span,
@@ -15661,7 +15700,8 @@ table.tablesorter thead tr .headerSortDown {
 .off-canvas-sidebar .logo a.logo-mini,
 .off-canvas-sidebar .logo a.logo-normal,
 .sidebar .user .photo,
-.off-canvas-sidebar .user .photo,
+.sidebar .user .photo-flag,
+.off-canvas-sidebar .user .photo-flag,
 .sidebar .user a,
 .off-canvas-sidebar .user a,
 .sidebar .user .info>a>span,

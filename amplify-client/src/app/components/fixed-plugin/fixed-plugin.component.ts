@@ -7,10 +7,12 @@ import { ToastrService } from "ngx-toastr";
   styleUrls: ["./fixed-plugin.component.scss"]
 })
 export class FixedPluginComponent implements OnInit {
-  public sidebarColor: string = "red";
+  public sidebarColor: string = "orange";
   public state: boolean = true;
   public dashboardColor: boolean = true;
-  constructor(public toastr: ToastrService) {}
+  constructor(public toastr: ToastrService) {
+    setTimeout(() => {this.changeSidebarColor("orange");}, 500);  
+  }
   changeSidebarColor(color) {
     var sidebar = document.getElementsByClassName("sidebar")[0];
     var mainPanel = document.getElementsByClassName("main-panel")[0];

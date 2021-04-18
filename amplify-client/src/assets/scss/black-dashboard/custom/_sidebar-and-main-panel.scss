@@ -410,6 +410,22 @@
         width: $full-width;
       }
     }
+    .photo-flag {
+      width: 34px;
+      height: 34px;
+      overflow: hidden;
+      float: left;
+      z-index: 5;
+      margin-right: 10px;
+      border-radius: 0%;
+      margin-left: 23px;
+      box-shadow: $box-shadow-raised;
+      @extend .animation-transition-general;
+
+      img {
+        width: $full-width;
+      }
+    }
 
     a {
       color: $white;

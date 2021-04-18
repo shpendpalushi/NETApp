@@ -13,7 +13,23 @@
         width: 100%;
       }
     }
+
+    .photo-flag {
+      height: 30px;
+      width: 30px;
+      border-radius: 0%;
+      overflow: hidden;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+      }
+    }
+
   }
+
+  
+
 
   > tbody > tr.table-success > td {
     background-color: darken($success, 10%);

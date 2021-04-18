@@ -17,7 +17,17 @@ import { PictureUploadComponent } from "./picture-upload/picture-upload.componen
 import { AuthNavbarComponent } from "./auth-navbar/auth-navbar.component";
 import { RtlNavbarComponent } from "./rtl-navbar/rtl-navbar.component";
 import { RtlSidebarComponent } from "./rtl-sidebar/rtl-sidebar.component";
-import { FixedPluginComponent } from "./fixed-plugin/fixed-plugin.component";
+import { FixedPluginComponent } from "./fixed-plugin/fixed-plugin.component"
+
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { HttpClient } from "@angular/common/http";
+
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   imports: [
@@ -29,7 +39,14 @@ import { FixedPluginComponent } from "./fixed-plugin/fixed-plugin.component";
     DxVectorMapModule,
     CollapseModule.forRoot(),
     BsDropdownModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+    })
   ],
   declarations: [
     FooterComponent,

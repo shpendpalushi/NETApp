@@ -1,4 +1,5 @@
-import { Component, OnInit, ElementRef, OnDestroy } from "@angular/core";
+import { TranslateService } from '@ngx-translate/core';
+import { Component, OnInit, ElementRef, OnDestroy, AfterViewInit, ViewChild } from "@angular/core";
 import { ROUTES } from "../sidebar/sidebar.component";
 import { Location } from "@angular/common";
 import { ToastrService } from "ngx-toastr";
@@ -14,7 +15,9 @@ var misc: any = {
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   private listTitles: any[];
+  public flagImageSource: string;
   location: Location;
+
 
   private toggleButton: any;
   public isCollapsed = true;
@@ -23,9 +26,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
     location: Location,
     private element: ElementRef,
     private router: Router,
-    public toastr: ToastrService
+    public toastr: ToastrService,
+    private translateService: TranslateService,
   ) {
     this.location = location;
+    this.translateService.setDefaultLang(`en-us`);
+    this.translateService.use(localStorage.getItem(`langChoice`) || `en-us`);
   }
   // function that adds color white/transparent to the navbar on resize (this is for the collapse)
   updateColor = () => {
@@ -82,11 +88,16 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ngOnInit() {
     window.addEventListener("resize", this.updateColor);
     this.listTitles = ROUTES.filter(listTitle => listTitle);
+    this.flagImageSource = `assets/img/` + this.loadImageFromLocal(localStorage.getItem(`langChoice`));
     const navbar: HTMLElement = this.element.nativeElement;
     this.toggleButton = navbar.getElementsByClassName("navbar-toggler")[0];
     this.router.events.subscribe(event => {
       this.sidebarClose();
     });
+  }
+
+  ngAfterViewInit(){
+
   }
   ngOnDestroy() {
     window.removeEventListener("resize", this.updateColor);
@@ -162,5 +173,26 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
     }
     html.classList.remove("nav-open");
+  }
+
+  changeLanguage(lang: string){
+    localStorage.setItem("langChoice", lang);
+    console.log(`language changed to ${lang}`);
+    window.location.reload();
+  }
+  loadImageFromLocal(lang: string){
+    switch(lang){
+      case "en-us":
+        return "US.png";
+      case "en-gb":
+      return "GB.png";
+      case "sq":
+        return "al.png";
+      case "it":
+        return "it.png"
+      default:
+        return "US.png";
+    };
+    
   }
 }
